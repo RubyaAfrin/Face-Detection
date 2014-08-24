@@ -1,0 +1,7 @@
+protected void onResume() {
+		super.onResume();
+//		preview.camera = Camera.open();
+		camera = Camera.open();
+		camera.startPreview();
+		preview.setCamera(camera);
+	}
