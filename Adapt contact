@@ -1,0 +1,17 @@
+
+	public ContactAdapter(Activity context, List<Contact> contacts)
+	{
+		super(context,R.layout.contactlistitem,contacts);
+		this._contacts=contacts;
+		this._context=context;
+	}
+	static class ViewHolder {
+		protected TextView text;
+		private Contact  _contact;
+		protected void setContact(Contact contact)
+		{
+			text.setText(contact.getDisplayName());
+			_contact=contact;
+		}
+		protected Contact getContact() {return _contact;}
+	}
