@@ -1,0 +1,8 @@
+ if (!isDeviceSupportCamera()) {
+           Toast.makeText(getApplicationContext(),
+                   "Sorry! Your device doesn't support camera",
+                   Toast.LENGTH_LONG).show();
+           // will close the application if it does not have a camera
+           finish();
+       }
+   }
