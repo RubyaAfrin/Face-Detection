@@ -1,0 +1,24 @@
+    private ContactList getContacts()
+    {
+    	ContactList contactList=new ContactList();
+    	Uri uri=ContactsContract.Contacts.CONTENT_URI;
+    	ContentResolver cr=getContentResolver();
+    	String sortOrder = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
+    	Cursor cur=cr.query(uri, null, null, null, sortOrder);
+    	if(cur.getCount()>0)
+    	{
+    		String id;
+    		String name;
+    		while(cur.moveToNext())
+    		{
+    			Contact c =new Contact();
+    			id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+    			name=cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+    			c.setId(id);
+    			c.setDisplayName(name);
+    			contactList.addContact(c);
+    		}
+    	}
+    	cur.close();
+    	return contactList;
+    }
