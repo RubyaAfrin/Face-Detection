@@ -1,0 +1,6 @@
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ContactList contactList=this.getContacts();
+        ArrayAdapter<Contact> adapter=new ContactAdapter(this,contactList.getContacts());
+        setListAdapter(adapter);
+    }
