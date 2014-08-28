@@ -1,0 +1,7 @@
+public FdActivity() {
+        mDetectorName = new String[2];
+        mDetectorName[JAVA_DETECTOR] = "Java";
+        mDetectorName[NATIVE_DETECTOR] = "Native (tracking)";
+
+        Log.i(TAG, "Instantiated new " + this.getClass());
+    }
