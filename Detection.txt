@@ -1,0 +1,25 @@
+  private void setDetectorType(int type) {
+    
+                if (mDetectorType != type) {
+           
+                  mDetectorType = type;
+
+           
+                if (type == NATIVE_DETECTOR) {
+      
+                  Log.i(TAG, "Detection Based Tracker enabled");
+              
+                    mNativeDetector.start();
+           
+                 }
+                else {
+                
+                 Log.i(TAG, "Cascade detector enabled");
+      
+                   mNativeDetector.stop();
+           
+                 }
+        
+              }
+    
+            }
