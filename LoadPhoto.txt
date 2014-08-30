@@ -1,0 +1,16 @@
+mIV = new MyImageView(this);
+		setContentView(mIV, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));       
+
+		// load the photo
+		Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.face_icon); 
+		mFaceBitmap = b.copy(Bitmap.Config.RGB_565, true); 
+		b.recycle();
+
+		mFaceWidth = mFaceBitmap.getWidth();
+		mFaceHeight = mFaceBitmap.getHeight();  
+		mIV.setImageBitmap(mFaceBitmap); 
+
+		// perform face detection and set the feature points
+		setFace();
+
+		mIV.invalidate();
