@@ -1,0 +1,17 @@
+ private void doLengthyCalc() {
+    	Thread t = new Thread() {
+    		Message m = new Message();
+
+    		public void run() {
+    			try {
+    				setFace();
+    				m.what = Detection.GUIUPDATE_SETFACE;      		    
+    				Detection.this.mHandler.sendMessage(m); 
+    			} catch (Exception e) { 
+    				Log.e(TAG, "doLengthyCalc(): " + e.toString());
+    			}
+    		}
+    	};      
+
+    	t.start();        
+    }  
