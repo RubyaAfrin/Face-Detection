@@ -1,0 +1,11 @@
+public void onPause()
+   
+ {
+        
+super.onPause();
+       
+ if (mOpenCvCameraView != null)
+ 
+           mOpenCvCameraView.disableView();
+ 
+   }
