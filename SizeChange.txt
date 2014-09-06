@@ -1,0 +1,13 @@
+protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+
+		mBitmapWidth = (mBitmap != null) ? mBitmap.getWidth() : 0;
+		mBitmapHeight = (mBitmap != null) ? mBitmap.getHeight() : 0;
+		if (mBitmapWidth == w && mBitmapHeight == h) {
+			return;
+		}
+
+		if (mBitmapWidth < w) mBitmapWidth = w;
+		if (mBitmapHeight < h) mBitmapHeight = h;
+	}                	      
+	
