@@ -1,0 +1,17 @@
+protected void onDraw(Canvas canvas) {	
+		super.onDraw(canvas); 
+		
+		if (mBitmap != null) {
+			canvas.drawBitmap(mBitmap, 0, 0, null);
+
+			if (mPX != null && mPY != null) {
+				for (int i = 0; i < mPX.length; i++) {
+					if (mDisplayStyle == 1) {
+						canvas.drawCircle(mPX[i], mPY[i], 10.0f, mPaint);
+					} else {
+						canvas.drawRect(mPX[i] - 20,  mPY[i] - 20, mPX[i] + 20,  mPY[i] + 20, mPaint);
+					}
+				}
+			}
+		}
+	}       
