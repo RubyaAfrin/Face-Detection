@@ -1,0 +1,15 @@
+public void setDisplayPoints(int [] xx, int [] yy, int total, int style) {
+		mDisplayStyle = style;
+		mPX = null;
+		mPY = null;
+		
+		if (xx != null && yy != null && total > 0) {			
+			mPX = new int[total];
+			mPY = new int[total];
+
+			for (int i = 0; i < total; i++) {
+				mPX[i] = xx[i];
+				mPY[i] = yy[i];
+			}
+		}
+	}
